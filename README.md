@@ -23,7 +23,7 @@ Create an application (Frontend and Backend) that allows people to sign up for c
 ## Requirements
 * Javascript, Ruby on Rails, or Python preferred.
 
-* A basic create-react-app project is included to use for Frontend template, though feel free to use what you are comfortable with! (We are not judging design).
+* A basic `create-react-app` project is included to use for Frontend template, though feel free to use what you are comfortable with! (We are not judging design).
 
 * All session titles and description should be viewable to users before sign up.
 
@@ -36,3 +36,14 @@ Create an application (Frontend and Backend) that allows people to sign up for c
     * (i.e. if a course has a section starting January 1 and January 14, users can only sign up for January 1 until full).
 
 * A user should only be able to sign up for 1 section of the course at a time.
+
+### Note: Create-React-App
+If you use the `create-react-app`, you must have `npm` or `yarn` installed. To run the app:
+```
+yarn && yarn start
+
+-OR-
+
+npm i && npm start 
+```
+
