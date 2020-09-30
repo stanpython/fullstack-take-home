@@ -1,0 +1,38 @@
+[
+	{
+		"id": 1,
+		"courseId": 1,
+		"nickname": "Section 1",
+		"dateStart": "2020-10-30"
+	},
+	{
+		"id": 2,
+		"courseId": 1,
+		"nickname": "Section 2",
+		"dateStart": "2020-11-13"
+	},
+	{
+		"id": 3,
+		"courseId": 1,
+		"nickname": "Section 3",
+		"dateStart": "2020-11-27"
+	},
+	{
+		"id": 4,
+		"courseId": 2,
+		"nickname": "Section 1",
+		"dateStart": "2020-10-15"
+	},
+	{
+		"id": 5,
+		"courseId": 2,
+		"nickname": "Section 2",
+		"dateStart": "2020-10-29"
+	},
+	{
+		"id": 6,
+		"courseId": 2,
+		"nickname": "Section 3",
+		"dateStart": "2020-11-12"
+	}
+]
