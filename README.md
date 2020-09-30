@@ -8,7 +8,7 @@ When submitting your exercise please include:
 
 - Any comments to explain particular logic or call out something cool!
 
-To submit your exercise, please create a repository in Github and email the link to [sara@join-real.com](mailto:sara@join-real.com). Also please email with any questions you may have. Happy Coding!
+To submit your exercise, please create a repository in Github and email the link to [eng@join-real.com](mailto:eng@join-real.com). Also please email with any questions you may have. Happy Coding!
 
 ---
 
