@@ -52,4 +52,4 @@ yarn && yarn start
 
 - A list of users signed up for each course section should be visible.
 
-- A user should be able to sign up and remove themselves from a course.
+- A user should be able to register for a course and remove themselves from the course.
