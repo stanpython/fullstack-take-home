@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 import Signin from "./components/Signin";
 import Courses from "./components/Courses";
 
@@ -10,6 +10,7 @@ const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [sections, setSections] = useState([]);
   const [signedupUsers, setSignedupUsers] = useState({});
+  const history = useHistory();
 
   useEffect(() => {
     getSections();
@@ -17,24 +18,32 @@ const App = () => {
   }, []);
 
   const getSections = async () => {
-    const response = await fetch("http://localhost:8080/api/sections");
-    const sectionsData = await response.json();
-    setSections([...sectionsData]);
+    try {
+      const response = await fetch(`http://localhost:8080/api/sections`);
+      const sectionsData = await response.json();
+      setSections([...sectionsData]);
+    } catch (err) {
+      return err;
+    }
   };
 
   const getSignedUpUsers = async () => {
-    const response = await fetch(`http://localhost:8080/api/user/signups`);
-    const signedUpData = await response.json();
-    const signedUpUsersObj = {};
+    try {
+      const response = await fetch(`http://localhost:8080/api/user/signups`);
+      const signedUpData = await response.json();
+      const signedUpUsersObj = {};
 
-    signedUpData.map((obj) => {
-      if (signedUpUsersObj[obj.section_id]) {
-        signedUpUsersObj[obj.section_id].push(<p key={obj.name}>{obj.name}</p>);
-      } else {
-        signedUpUsersObj[obj.section_id] = [<p key={obj.name}>{obj.name}</p>];
-      }
-    });
-    setSignedupUsers({ ...signedUpUsersObj });
+      signedUpData.map((obj) => {
+        if (signedUpUsersObj[obj.section_id]) {
+          signedUpUsersObj[obj.section_id].push(<p key={obj.name}>{obj.name}</p>);
+        } else {
+          signedUpUsersObj[obj.section_id] = [<p key={obj.name}>{obj.name}</p>];
+        }
+      });
+      setSignedupUsers({ ...signedUpUsersObj });
+    } catch (err) {
+      return err;
+    }
   };
 
   const enroll = async (userId, event) => {
@@ -87,20 +96,31 @@ const App = () => {
   const login = async (event) => {
     event.preventDefault();
     const { name, email } = event.target;
-
-    const response = await fetch(
-      `http://localhost:8080/api/user?name=${name.value}&email=${email.value}`
-    );
-    const userData = await response.json();
-    setUserData({ ...userData });
-    setLoggedIn(true);
+    if (name.value && email.value) {
+      try {
+        const response = await fetch(
+          `http://localhost:8080/api/user?name=${name.value}&email=${email.value}`
+        );
+        const userData = await response.json();
+        setUserData({ ...userData });
+        setLoggedIn(true);
+        alert("Signed in successfully");
+        history.push("/courses");
+      } catch (err) {
+        return err;
+      }
+    }
   };
 
   const refreshUser = async (name, email) => {
     if (name && email) {
-      const response = await fetch(`http://localhost:8080/api/user?name=${name}&email=${email}`);
-      const data = await response.json();
-      setUserData({ ...data });
+      try {
+        const response = await fetch(`http://localhost:8080/api/user?name=${name}&email=${email}`);
+        const data = await response.json();
+        setUserData({ ...data });
+      } catch (err) {
+        return err;
+      }
     }
   };
 

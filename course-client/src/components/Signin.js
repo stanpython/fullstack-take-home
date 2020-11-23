@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import '../stylesheets/Signin.css';
+import "../stylesheets/Signin.css";
 
 const Signin = ({ user, login }) => {
   return (
