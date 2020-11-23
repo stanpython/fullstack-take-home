@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import PopupContainer from './content-popup/PopupContainer';
+import React, { useState, useEffect } from "react";
+import PopupContainer from "./content-popup/PopupContainer";
 
-import '../stylesheets/Homepage.css';
+import "../stylesheets/Courses.css";
 
-const Homepage = ({ user, loggedIn, sections, signedupUsers, enroll, unenroll, refreshUser }) => {
+const Courses = ({ user, loggedIn, sections, signedupUsers, enroll, unenroll, refreshUser }) => {
   const [sectionDiv, setSectionDiv] = useState([]);
   const [courseContent, setCourseContent] = useState([]);
   const [modal, setModal] = useState(false);
@@ -64,7 +64,7 @@ const Homepage = ({ user, loggedIn, sections, signedupUsers, enroll, unenroll, r
         return err;
       }
     } else {
-      alert('You need to enroll for this course to see content!');
+      alert("You need to enroll for this course to see content!");
     }
   };
 
@@ -85,4 +85,4 @@ const Homepage = ({ user, loggedIn, sections, signedupUsers, enroll, unenroll, r
   }
 };
 
-export default Homepage;
+export default Courses;
