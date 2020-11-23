@@ -1,19 +1,19 @@
-.App {
+.Signin {
   text-align: center;
 }
 
-.App-logo {
+.Signin-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .Signin-logo {
+    animation: Signin-logo-spin infinite 20s linear;
   }
 }
 
-.App-header {
+.Signin-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -24,11 +24,17 @@
   color: white;
 }
 
-.App-link {
+.Signin-link {
   color: #61dafb;
+  margin-right: 5px;
+  margin-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
+form {
+  margin-top: 20px;
+}
+
+@keyframes Signin-logo-spin {
   from {
     transform: rotate(0deg);
   }
