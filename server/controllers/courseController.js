@@ -1,10 +1,10 @@
-const db = require('../models/model');
+const db = require("../models/model");
 
 const courseController = {};
 
 /**
  * @name getCourses
- * @description selects all courses and loads them into the res.locals.courses array
+ * @description selects courses by ID and loads them into the res.locals.courses array
  */
 
 courseController.getCourseContent = async (req, res, next) => {

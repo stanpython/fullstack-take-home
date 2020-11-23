@@ -1,6 +1,6 @@
-const express = require('express');
-const apiRouter = require('./routes/api');
-const cors = require('cors');
+const express = require("express");
+const apiRouter = require("./routes/api");
+const cors = require("cors");
 
 const app = express();
 const port = 8080;
@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 /**
  * route handlers
  */
-app.use('/api', apiRouter);
+app.use("/api", apiRouter);
 
 // catch-all route handler for any requests to an unknown route
 app.use((req, res) => res.sendStatus(404));
