@@ -24,7 +24,7 @@ const Courses = ({ user, loggedIn, sections, signedupUsers, enroll, unenroll, re
       return dateA - dateB;
     });
 
-    sectionsData.map((obj) => {
+    sectionsData.forEach((obj) => {
       const date = new Date(obj.start_date);
       containers.push(
         <div key={obj.id} className="course-date">

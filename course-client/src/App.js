@@ -33,7 +33,7 @@ const App = () => {
       const signedUpData = await response.json();
       const signedUpUsersObj = {};
 
-      signedUpData.map((obj) => {
+      signedUpData.forEach((obj) => {
         if (signedUpUsersObj[obj.section_id]) {
           signedUpUsersObj[obj.section_id].push(<p key={obj.name}>{obj.name}</p>);
         } else {
