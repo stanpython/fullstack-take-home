@@ -125,7 +125,7 @@ const App = () => {
   };
 
   return (
-    <Router>
+    <div>
       <div className="App">
         <Link id="links" to="/signup">
           Sign In
@@ -150,7 +150,7 @@ const App = () => {
           />
         </Route>
       </Switch>
-    </Router>
+    </div>
   );
 };
 
